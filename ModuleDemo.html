@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		window.onload = function(){
+			var calculator = new Calculator('eq');
+			calculator.add(2,2);
+		};
+		var Calculator = function(eq){
+			//private variables
+			var eqctl = document.getElementById(eq);
+			return {
+				//expose public members
+				add: function(x,y){
+					var val = x + y;
+					eqctl.innerHTML = val;
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<div id="eq"></div>
+</body>
+</html>
