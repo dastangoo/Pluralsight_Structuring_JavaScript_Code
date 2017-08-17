@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		
+		//calculator.js
+		var calculator = function (eq) {
+			var eqCtl = document.getElementById(eq);
+			var doAdd = function (x, y) {
+						var val = x + y;
+						eqCtl.innerHTML = val;
+					};
+			
+			return {
+				add: doAdd 
+			}; //Expose public member
+		}('eq');
+		calculator.add(2,2);
+	</script>
+</head>
+<body>
+	<div id="eq"></div>
+</body>
+</html>
