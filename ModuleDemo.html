@@ -7,13 +7,17 @@
 		window.onload = function(){
 			var calculator = new Calculator('eq');
 			calculator.add(2,2);
+			alert(calculator.eqCtl.innerHTML);
 		};
+		
+		
+		//calculator.js
 		var Calculator = function(eq){
 			//private variables
 			var eqctl = document.getElementById(eq);
 			return {
-				//expose public members
-				add: function(x,y){
+				//public
+				add: function(x,y){ 
 					var val = x + y;
 					eqctl.innerHTML = val;
 				}
