@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			var calc = new Calculator('eq');
+			calc.add(2,2);
+		};
+
+		var Calculator = function(eq){
+			this.eqCtl = document.getElementById(eq);
+		};
+	
+	Calculator.prototype = {
+		add: function(X,Y){
+			var val = X + Y;
+			this.eqCtl.innerHTML = val;
+		}
+	};
+</script>
+</head>
+<body>
+<p id="eq"></p>
+<script>
+	
+</script>
+</body>
+</html>
