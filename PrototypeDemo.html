@@ -5,20 +5,26 @@
 	<title>Document</title>
 	<script>
 		window.onload = function(){
-			var calc = new Calculator('eq');
+//			Calculator.prototype.add = function(x,y){
+//				var val = x - y;
+//				this.eqCtl.innerHTML = val;
+//			};
+			var calc = new myNS.Calculator('eq');
 			calc.add(2,2);
 		};
 
-		var Calculator = function(eq){
+		var myNS = myNS || {};
+		// calculator.js
+		myNS.Calculator = function(eq){
 			this.eqCtl = document.getElementById(eq);
 		};
 	
-	Calculator.prototype = {
-		add: function(X,Y){
-			var val = X + Y;
-			this.eqCtl.innerHTML = val;
-		}
-	};
+		myNS.Calculator.prototype = {
+			add: function(X,Y){
+				var val = X + Y;
+				this.eqCtl.innerHTML = val;
+			}
+		};
 </script>
 </head>
 <body>
