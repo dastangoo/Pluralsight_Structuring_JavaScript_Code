@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		var Calculator = function (eq) {
+			//variables defined here
+			this.eqCtl = document.getElementById(eq);
+		};
+		
+		Calculator.prototype = function () {
+			//functions defined here
+			var add = function () {
+				var val = x + y;
+				this.eqCtl.innerHTML = val;
+			};	
+			
+			return {
+				//public members defined here as
+				//with Revealing Module Pattern
+				add: add;
+			};
+		}();
+	</script>
+</head>
+<body>
+	<div id="eq"></div>
+</body>
+</html>
