@@ -4,23 +4,34 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<script>
-		
-		//calculator.js
-		var calculator = function (eq) {
-			var eqCtl = document.getElementById(eq);
-			var doAdd = function (x, y) {
-						var val = x + y;
-						eqCtl.innerHTML = val;
-					};
-			
-			return {
-				add: doAdd 
-			}; //Expose public member
-		}('eq');
-		calculator.add(2,2);
+		window.onload = function () {
+//			calculator.add(2,2);
+			calculator.doAdd(2,2);
+//			calculator.subtract(2,2);
+			calculator.doSubtract(2,2);
+		};
 	</script>
 </head>
 <body>
-	<div id="eq"></div>
+	<div id="output"></div>
+	<script>
+		//calculator.js
+		var calculator = function (eq) {
+		var eqCtl = document.getElementById(eq);
+		var add = function (x, y) {
+				eqCtl.innerHTML = x + y;
+			},
+			subtract = function (x, y) {
+				alert(x - y);
+			}
+
+		return {
+//			add: add,
+			doAdd: add,
+//			subtract: subtract
+			doSubtract: subtract
+		}; //Expose public member
+	}('output');
+ </script>
 </body>
 </html>

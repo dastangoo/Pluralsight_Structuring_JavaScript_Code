@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Using the Module Pattern</title>
+	<link rel="stylesheet" href="" src="Styles/Styles.css" type="text/css">
+	<script src="Scripts/RevealingModulePattern.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		//var myCalc;
+		window.onload = function(){
+			var eqCtl = document.getElementById('eq');
+			var currNumberCtl = document.getElementById('currNumber');
+			calculator.init(eqCtl, currNumberCtl);
+		};
+	</script>
+</head>
+<body>
+	<div>
+		<h2>Using the Revealing Module Pattern to create a calculator</h2>
+		<!--		Note: I prefer to wire up event handlers via code in "real life" applications but in this case I decided to do it in HTML just to allow the focus on patterns. -->
+		<div class="Calculator">
+			<div class="CalculatorHead">
+				<div class="Equation" id="eq"></div>
+				<div id="currNumber" class="CurrentNumber"></div>
+			</div>
+			<div>
+				<div class="Button" onclick="calc.numberClick(event);">7</div>
+				<div class="Button" onclick="calc.numberClick(event);">8</div>
+				<div class="Button" onclick="calc.numberClick(event);">9</div>
+				<div class="Button" onclick="calc.setOperator('/');">/</div>
+				<div class="Button rowspan2" onclick="calc.clearNumbers();">C</div>
+			</div>
+			<div>
+				<div class="Button" onclick="calc.numberClick(event);">4</div>
+				<div class="Button" onclick="calc.numberClick(event);">5</div>
+				<div class="Button" onclick="calc.numberClick(event);">6</div>
+				<div class="Button" onclick="calc.setOperator('/');">*</div>
+				<div class="Button rowspan2" onclick="calc.clearNumbers();">C</div>
+			</div>
+				
+			</div>
+		</div>
+	</div>
+	<div id="currNumber"></div>
+</body>
+</html>
